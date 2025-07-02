@@ -8,9 +8,12 @@
     <ul>
       <% messages.forEach((message) => { %>
       <li>
-        <p>User: <%= message.user %></p>
-        <p>Message: <%= message.text %></p>
-        <p>Posted at: <%= message.added.toLocaleString() %></p>
+        <p><strong><%= message.user %>:</strong> <%= message.text %></p>
+        <small><%= message.added.toLocaleString() %></small>
+        <!-- <br /> -->
+        <a href="/messages/<%= message.id %>">
+          <button>Open</button>
+        </a>
       </li>
       <% }); %>
     </ul>
