@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title><%= title %></title>
+  </head>
+  <body>
+    <h1>Mini message board</h1>
+    <ul>
+      <% messages.forEach((message) => { %>
+      <li>
+        <p>User: <%= message.user %></p>
+        <p>Message: <%= message.text %></p>
+        <p>Posted at: <%= message.added.toLocaleString() %></p>
+      </li>
+      <% }); %>
+    </ul>
+  </body>
+</html>
