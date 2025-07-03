@@ -1,0 +1,43 @@
+body {
+  font-family: "Helvetica", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 16px 12px;
+}
+
+li button {
+  background-color: transparent;
+  border: 1px solid black;
+  margin-left: 10px;
+  /* border-radius: 10px; */
+}
+
+li button:hover {
+  background-color: lightcyan;
+  cursor: pointer;
+}
+
+form {
+  margin-bottom: 18px;
+}
+
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-inputs input {
+  width: 100%;
+  min-width: 250px;
+  max-width: 500px;
+  padding: 6px;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+  /* font-size: 1rem; */
+}

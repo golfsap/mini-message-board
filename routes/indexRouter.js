@@ -21,7 +21,7 @@ indexRouter.get("/", (req, res) => {
 });
 
 indexRouter.get("/new", (req, res) => {
-  res.render("form");
+  res.render("form", { title: "Create Message" });
 });
 
 indexRouter.get("/messages/:id", (req, res) => {
