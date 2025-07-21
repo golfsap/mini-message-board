@@ -1,55 +1,19 @@
 const { Router } = require("express");
-const indexRouter = Router();
 const messageController = require("../controllers/messageController");
+const { body, validationResult } = require("express-validator");
+const indexRouter = Router();
 
-const messages = [
-  {
-    id: 1,
-    text: "Hi there!",
-    user: "Amando",
-    added: new Date(),
-  },
-  {
-    id: 2,
-    text: "Hello World",
-    user: "Charles",
-    added: new Date(),
-  },
-];
-
-// indexRouter.get("/", (req, res) => {
-//   res.render("index", { title: "Mini MessageBoard", messages: messages });
-// });
 indexRouter.get("/", messageController.messagesListGet);
-
-indexRouter.get("/new", (req, res) => {
-  res.render("form", { title: "Create Message" });
-});
-
-indexRouter.get("/messages/:id", (req, res) => {
-  const messageId = parseInt(req.params.id);
-  const message = messages.find((message) => message.id === messageId);
-
-  if (!message) {
-    return res.status(404).send("Message not found");
-  }
-
-  res.render("message", { title: "Message Details", message });
-});
-
-indexRouter.post("/new", (req, res) => {
-  const { messageUser, messageText } = req.body;
-  if (messageUser && messageText) {
-    const newId =
-      messages.length > 0 ? messages[messages.length - 1].id + 1 : 1;
-    messages.push({
-      id: newId,
-      text: messageText,
-      user: messageUser,
-      added: new Date(),
-    });
-  }
-  res.redirect("/");
-});
+indexRouter.get("/new", messageController.newMessageGet);
+indexRouter.post(
+  "/new",
+  [
+    body("messageUser").trim().notEmpty().withMessage("Name is required."),
+    body("messageText").trim().notEmpty().withMessage("Message is required."),
+  ],
+  messageController.newMessagePost
+);
+indexRouter.get("/messages/:id", messageController.messageIdGet);
+indexRouter.post("/delete/:id", messageController.deleteMessagePost);
 
 module.exports = indexRouter;

@@ -6,9 +6,17 @@
   </head>
   <body>
     <h1>Message Details</h1>
-    <p><strong>User:</strong> <%= message.user %></p>
+    <p><strong>User:</strong> <%= message.username %></p>
     <p><strong>Message:</strong> <%= message.text %></p>
     <p><strong>Posted at:</strong> <%= message.added.toLocaleString() %></p>
+    <form
+      action="/delete/<%= message.id %>"
+      method="POST"
+      onsubmit="return confirm('Are you sure you want to delete this message?');"
+    >
+      <button type="submit">Delete message</button>
+    </form>
+
     <p><a href="/">Back to all messages</a></p>
   </body>
 </html>
