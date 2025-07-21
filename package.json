@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/golfsap/mini-message-board#readme",
   "dependencies": {
+    "dotenv": "^17.2.0",
     "ejs": "^3.1.10",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "pg": "^8.16.3"
   }
 }

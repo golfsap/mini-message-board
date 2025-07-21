@@ -1,5 +1,6 @@
 const { Router } = require("express");
 const indexRouter = Router();
+const messageController = require("../controllers/messageController");
 
 const messages = [
   {
@@ -16,9 +17,10 @@ const messages = [
   },
 ];
 
-indexRouter.get("/", (req, res) => {
-  res.render("index", { title: "Mini MessageBoard", messages: messages });
-});
+// indexRouter.get("/", (req, res) => {
+//   res.render("index", { title: "Mini MessageBoard", messages: messages });
+// });
+indexRouter.get("/", messageController.messagesListGet);
 
 indexRouter.get("/new", (req, res) => {
   res.render("form", { title: "Create Message" });
