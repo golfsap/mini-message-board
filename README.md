@@ -1,11 +1,19 @@
-# Mini Message Board 🗒️
+# 📝 Mini Message Board
 
-A simple web application built with **Node.js**, **Express**, and **EJS** that allows users to post short messages and view them in a list. Each message can be opened to view their details in a separate page.
+A simple full-stack web application where users can post, view, and delete messages. Built with Node.js, Express, PostgreSQL, and EJS.
 
-## Features
+## 🚀 Features
 
-- View a list of messages on the home page
-- Add a new message using a simple form
-- View message details on a separate page
-- Server-side rendering with EJS templates
-- Clean, modular routing using Express
+- Create and submit messages with a name and message body
+- View all submitted messages on the home page
+- View individual message details
+- Delete messages by ID
+- Search for messages by username (via query string)
+- Form validation with `express-validator`
+
+## 🛠 Tech Stack
+
+- **Backend**: Node.js, Express
+- **Database**: PostgreSQL (with `pg`)
+- **Templating Engine**: EJS
+- **Deployment**: Railway
