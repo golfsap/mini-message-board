@@ -10,7 +10,10 @@
       <% messages.forEach((message) => { %>
       <li>
         <p><strong><%= message.username %>:</strong> <%= message.text %></p>
-        <small><%= message.added.toLocaleString() %></small>
+        <small
+          ><%= message.added ? message.added.toLocaleString() : "Unknown date"
+          %></small
+        >
         <!-- <br /> -->
         <a href="/messages/<%= message.id %>">
           <button>Open</button>

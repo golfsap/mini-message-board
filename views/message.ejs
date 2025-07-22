@@ -8,7 +8,10 @@
     <h1>Message Details</h1>
     <p><strong>User:</strong> <%= message.username %></p>
     <p><strong>Message:</strong> <%= message.text %></p>
-    <p><strong>Posted at:</strong> <%= message.added.toLocaleString() %></p>
+    <p>
+      <strong>Posted at:</strong> <%= message.added ?
+      message.added.toLocaleString() : "Unknown date" %>
+    </p>
     <form
       action="/delete/<%= message.id %>"
       method="POST"
