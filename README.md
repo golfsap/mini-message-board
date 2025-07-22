@@ -10,7 +10,6 @@ A simple full-stack web application where users can post, view, and delete messa
 - View all submitted messages on the home page
 - View individual message details
 - Delete messages by ID
-- Search for messages by username (via query string)
 - Form validation with `express-validator`
 
 ## 🛠 Tech Stack
