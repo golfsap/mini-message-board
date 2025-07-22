@@ -2,6 +2,8 @@
 
 A simple full-stack web application where users can post, view, and delete messages. Built with Node.js, Express, PostgreSQL, and EJS.
 
+**Live demo:** https://mini-message-board-production-c102.up.railway.app
+
 ## 🚀 Features
 
 - Create and submit messages with a name and message body
